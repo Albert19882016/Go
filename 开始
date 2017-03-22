@@ -1,0 +1,31 @@
+Golang开发环境准备
+一、 Go语言的环境变量配置
+  1.  新建环境变量 GOROOT 
+      指向下载Golang程序解压后的根目录;
+  2.  在PATH环境变量中添加GO的bin路径
+      值为%GOROOT%\bin;
+  3.  新建环境变量 GOPATH 
+      指向工作空间的路径；该路径为加载代码的重要路径，可以填写过个路径，用分号分割。
+      例如：我的GOPATH = F:\code\golang\godev;F:\code\golang;F:\code\golang\beego;
+                        F:\code\golang\beeweb
+      注意：要加载的包的源码必须放在GOPATH路径下的src目录，否则无法加载包。
+
+	1. 使用go get获取github上的开源类库
+
+     以获取github上的一个开源博客系统(github.com/lisijie/goblog)为例：
+     1) 设置项目路径到GOPATH里(放在GOPATH最前面，go get将代码下载到GOPATH里面
+        的第一个项目目录里)；如：我把下载的博客系统放到D:\code\golang\globlog目录
+        ，则GOPATH=F:\code\golang\goblog;F:\code\golang\letsgo;
+                   F:\code\golang;F:\code\golang\beego;F:\code\golang\beeweb;
+        注：如果有开启git shell建议重启一下git shell，以使GOPATH设置生效。
+     2) 在git shell下运行go get github.com/lisijie/goblog
+     3) 进入F:\code\golang\goblog目录就可以看到下载下来的源码了
+
+
+二、 开发工具选择
+ 目前比较好的IDE是JetBrains下的IDEA和Pycharm,集成Go插件后带有语法高亮和自动
+ 补齐等功能。开发工具也可选Sublime Text3 + GoSublime的精简组合。大体步骤如下：
+ 1. 先安装package control，重启后preferences菜单下多一个菜单项package control
+ 2. 安装Gosublime插件，按住ctrl + shift + p 会弹出一个对话框
+ 3. 输入pci回车，然后会弹出一个对话框，然后输入Gosublime回车
+ 4. 如还需其他插件可依次逐个安装
